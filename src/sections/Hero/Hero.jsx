@@ -55,7 +55,7 @@ function Hero() {
                 </a>
             </span>
             <p className={styles.description}>
-                Ingeniero en Sistemas apasionado por desarrollar aplicaciones web modernas y soluciones de software eficientes.
+                Ingeniero en Sistemas con experiencia en desarrollo de software, aportando en proyectos reales y buscando nuevos retos profesionales.
             </p>
             <a href={CV} download>
                 <button className="hover">
