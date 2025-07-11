@@ -20,7 +20,7 @@ function Contact() {
     console.log('Datos del formulario:', data); // Log para depuración
 
     try {
-      const response = await fetch('http://localhost:3001/send-email', {
+      const response = await fetch('https://portfolio-jesus-moreira.onrender.com/send-email', {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',

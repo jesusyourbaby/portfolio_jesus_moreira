@@ -61,10 +61,7 @@ app.post('/send-email', async (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.status(200).json({
-    status: 'API funcionando',
-    message: 'Bienvenido al backend del portfolio. Usa /send-email para contactar.'
-  });
+  res.redirect('https://portfolioprojectjesusmoreira.netlify.app');
 });
 
 app.listen(3001, () => console.log('Servidor listo en http://localhost:3001'));
