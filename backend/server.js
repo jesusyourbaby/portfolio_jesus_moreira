@@ -35,9 +35,9 @@ app.post('/send-email', async (req, res) => {
     }
 
     const mailOptions = {
-    from: `"Portfolio Contact" <${process.env.EMAIL}>`,  // Email fijo (tu dominio)
+    from: `"Portfolio Contact" <${process.env.EMAIL}>`,  // Email fijo (tu Gmail)
     to: process.env.EMAIL,
-    replyTo: `"${name}" <${email}>`,  // Email del contacto
+    replyTo: `"${name}" <${email}>`,  // ¡Este es el truco clave!
     subject: `Nuevo mensaje de ${name}`,
     text: `Nombre: ${name}\nEmail: ${email}\nMensaje: ${message}`,
     html: `
