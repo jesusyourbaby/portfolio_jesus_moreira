@@ -35,17 +35,18 @@ app.post('/send-email', async (req, res) => {
     }
 
     const mailOptions = {
-    from: `"Portfolio Contact" <${process.env.EMAIL}>`,  // Email fijo (tu Gmail)
+    from: `"Notificaciones Portfolio" <${process.env.EMAIL}>`, // Fijo, pero claro
     to: process.env.EMAIL,
-    replyTo: `"${name}" <${email}>`,  // ¡Este es el truco clave!
-    subject: `Nuevo mensaje de ${name}`,
-    text: `Nombre: ${name}\nEmail: ${email}\nMensaje: ${message}`,
+    replyTo: `"${name}" <${email}>`, // Contacto real aquí
+    subject: `📩 Mensaje de ${name} desde el Portfolio`,
     html: `
-        <h3>Nuevo mensaje de contacto</h3>
+        <h2>Nuevo mensaje desde el Portfolio</h2>
+        <p><strong>⚠️ ATENCIÓN:</strong> Este mensaje fue enviado por un visitante.</p>
         <p><strong>Nombre:</strong> ${name}</p>
-        <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+        <p><strong>Email real:</strong> <a href="mailto:${email}" style="color: #2563eb; text-decoration: underline;">${email}</a></p>
         <p><strong>Mensaje:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <div style="background: #f3f4f6; padding: 12px; border-radius: 8px;">${message.replace(/\n/g, '<br>')}</div>
+        <p style="margin-top: 16px; color: #6b7280;">Haz clic en "Responder" para contactar al remitente original.</p>
     `
     };
 
